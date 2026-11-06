@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharathapuzha Interactive WebGIS</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f8f7;
+    color: #18343b;
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(rgba(0,35,50,.65),rgba(0,70,80,.65)),
+    url("https://upload.wikimedia.org/wikipedia/commons/3/3c/Evening_sight_of_Bharathappuzha.jpg")
+    center/cover;
+    color: white;
+    text-align: center;
+    padding: 110px 20px;
+}
+
+header h1 {
+    font-size: 48px;
+    letter-spacing: 3px;
+}
+
+header p {
+    font-size: 19px;
+    margin-top: 10px;
+}
+
+nav {
+    background: #064b56;
+    padding: 16px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #7fffd4;
+}
+
+section {
+    max-width: 1150px;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #087e8b;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.description {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #0002;
+}
+
+.description p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.map-container {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #0002;
+}
+
+iframe {
+    width: 100%;
+    height: 620px;
+    border: none;
+    border-radius: 10px;
+}
+
+.map-link {
+    display: block;
+    text-align: center;
+    background: #087e8b;
+    color: white;
+    padding: 12px;
+    margin: 15px auto 0;
+    width: fit-content;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+    gap: 22px;
+}
+
+.photo-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px #0002;
+    transition: transform .3s;
+}
+
+.photo-card:hover {
+    transform: translateY(-6px);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-card h3 {
+    color: #087e8b;
+    padding: 12px 15px 0;
+}
+
+.photo-card p {
+    padding: 5px 15px 18px;
+    font-size: 14px;
+}
+
+.contact {
+    background: linear-gradient(135deg,#064b56,#087e8b);
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.contact h2 {
+    color: white;
+}
+
+.contact a {
+    color: #7fffd4;
+    text-decoration: none;
+}
+
+footer {
+    background: #032f3a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width:600px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 8px;
+    }
+
+    iframe {
+        height: 480px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>BHARATHAPUZHA</h1>
+    <p>The Lifeline of Central Kerala</p>
+    <p>Interactive WebGIS | River Basin Exploration</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#map">WebGIS Map</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- ABOUT SECTION -->
+
+<section id="about">
+
+<div class="description">
+
+<h2>About Bharathapuzha</h2>
+
+<p>
+Bharathapuzha, popularly known as Nila River, is one of the
+major rivers of Kerala, India. It originates in the Western
+Ghats and flows westward through parts of Tamil Nadu and
+Kerala before joining the Arabian Sea near Ponnani.
+</p>
+
+<p>
+Bharathapuzha is the second-longest river in Kerala and
+plays an important role in the geographical, agricultural,
+ecological and cultural development of the region.
+</p>
+
+<p>
+The river basin includes several tributaries, reservoirs,
+irrigation projects and important water resources.
+Malampuzha Dam, Kanjirapuzha Dam and Mangalam Dam are
+important water infrastructure projects in the wider
+basin region.
+</p>
+
+<p>
+The river is also closely connected with Kerala's history,
+literature and cultural traditions. The banks of
+Bharathapuzha have inspired many poets, writers and artists.
+</p>
+
+<p>
+This Interactive WebGIS project provides a geographical
+platform to explore the Bharathapuzha river basin,
+understand its physical features and examine important
+water resources through interactive mapping.
+</p>
+
+</div>
+</section>
+
+<!-- WEBGIS MAP SECTION -->
+
+<section id="map">
+
+<h2>Interactive Bharathapuzha WebGIS Map</h2>
+
+<div class="map-container">
+
+<iframe
+src="https://sijosa6-creator.github.io/WEBGIS-BHARATHAPUZHA/"
+title="Bharathapuzha Interactive WebGIS"
+allowfullscreen>
+</iframe>
+
+<a class="map-link"
+href="https://sijosa6-creator.github.io/WEBGIS-BHARATHAPUZHA/"
+target="_blank">
+Open Full Interactive WebGIS Map
+</a>
+
+</div>
+</section>
+
+<!-- PHOTO GALLERY -->
+
+<section id="gallery">
+
+<h2>Bharathapuzha Photo Gallery</h2>
+
+<div class="gallery">
+
+<div class="photo-card">
+<img
+src="https://kerala.me/wp-content/uploads/2015/12/Bharathapuzha.jpg"
+alt="Bharathapuzha river landscape">
+<h3>Bharathapuzha River</h3>
+<p>
+A beautiful view of Bharathapuzha with its wide sandy
+riverbanks and flowing water.
+</p>
+</div>
+
+<div class="photo-card">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Bharathapuzha_River.png"
+alt="Aerial view of Bharathapuzha near Shoranur">
+<h3>Bharathapuzha at Shoranur</h3>
+<p>
+An aerial view showing the river, bridges, sandbanks
+and surrounding landscape.
+</p>
+</div>
+
+<div class="photo-card">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/6/65/Chamravattom_Regulator_Cum_Bridge.JPG"
+alt="Chamravattom regulator bridge">
+<h3>Chamravattom Regulator-Cum-Bridge</h3>
+<p>
+An important water management structure across
+Bharathapuzha near Ponnani.
+</p>
+</div>
+
+<div class="photo-card">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Evening_sight_of_Bharathappuzha.jpg"
+alt="Sunset over Bharathapuzha">
+<h3>Evening View of Nila</h3>
+<p>
+A scenic sunset view over the beautiful Bharathapuzha River.
+</p>
+</div>
+
+<div class="photo-card">
+<img
+src="https://img.onmanorama.com/content/dam/mm/en/news/kerala/images/2019/10/22/bharathapuzha-river-kerala.jpg/photos/16x9/photo.jpg"
+alt="Boats on Bharathapuzha">
+<h3>River and Traditional Boats</h3>
+<p>
+Traditional boats and river landscapes associated
+with the life of local communities.
+</p>
+</div>
+
+<div class="photo-card">
+<img
+src="https://images.mindtrip.ai/attractions/5a4e/e9b6/1bbc/e258/413a/1923/154e/2130"
+alt="Bridge and sandy riverbank">
+<h3>Bharathapuzha River Bridge</h3>
+<p>
+A view of the bridge and expansive sandy riverbank
+landscape.
+</p>
+</div>
+
+<!-- YOUR UPLOADED PHOTOGRAPHS -->
+
+<div class="photo-card">
+<img src="Kanjirapuzha.jpg" alt="Kanjirapuzha Dam">
+<h3>Kanjirapuzha Dam</h3>
+<p>
+An important reservoir and irrigation project
+in the basin region.
+</p>
+</div>
+
+<div class="photo-card">
+<img src="Malampuzha.jpg" alt="Malampuzha Dam">
+<h3>Malampuzha Dam</h3>
+<p>
+An important water storage and irrigation project
+near Palakkad.
+</p>
+</div>
+
+<div class="photo-card">
+<img src="Mangalam.jpg" alt="Mangalam Reservoir">
+<h3>Mangalam Reservoir</h3>
+<p>
+A beautiful reservoir landscape surrounded by
+green hills.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section id="contact">
+
+<div class="contact">
+
+<h2>Contact Details</h2>
+
+<h3>SIJO S A</h3>
+
+<p>Creator of Bharathapuzha Interactive WebGIS</p>
+
+<p>
+Email:
+<a href="mailto:sijosa6@gmail.com">
+sijosa6@gmail.com
+</a>
+</p>
+
+<br>
+
+<p>
+For suggestions, information and enquiries
+regarding this WebGIS project, please contact me.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Bharathapuzha Interactive WebGIS</p>
+
+<p>Designed and Developed by SIJO S A</p>
+
+</footer>
+
+</body>
+</html>
